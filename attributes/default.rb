@@ -32,4 +32,7 @@ default.elasticsearch[:thread_stack_size] = "256k"
 default.elasticsearch[:cluster][:name] = "#{node.elasticsearch[:cluster_name] || "caplinked-es-dev"}"
 
 # === NODE
+#by ES rule, if you have N nodes, then by convention, N/2+1 nodes should be masters for fail-over mechanisms
 default.elasticsearch[:node][:name]    = "#{Time.now.to_i}"
+default.elasticsearch[:node][:data]    = true
+default.elasticsearch[:node][:master]  = true

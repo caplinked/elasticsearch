@@ -32,4 +32,4 @@ default.elasticsearch[:thread_stack_size] = "256k"
 default.elasticsearch[:cluster][:name] = "#{node.elasticsearch[:cluster_name] || "caplinked-es-dev"}"
 
 # === NODE
-default.elasticsearch[:node][:name]    = "0"
+default.elasticsearch[:node][:name]    = "#{Time.now.to_i}"

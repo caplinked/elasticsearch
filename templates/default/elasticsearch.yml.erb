@@ -308,7 +308,7 @@ path.plugins: <%= node[:elasticsearch][:path][:plugins] %>
 # operational within the cluster. Set this option to a higher value (2-4)
 # for large clusters (>3 nodes):
 #
- discovery.zen.minimum_master_nodes: 2
+# discovery.zen.minimum_master_nodes: 1
 
 # Set the time to wait for ping responses from other nodes when discovering.
 # Set this option to a higher value on a slow or congested network

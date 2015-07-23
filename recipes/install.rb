@@ -55,3 +55,7 @@ if !!node[:elasticsearch][:basic_auth]
     not_if "ls #{node[:elasticsearch][:path][:plugins]}/http-basic"
   end
 end
+
+execute "install aws-cloud plugin" do
+ command "#{node[:elasticsearch][:home_dir]}bin/plugin install elasticsearch/elasticsearch-cloud-aws/2.3.0"
+end

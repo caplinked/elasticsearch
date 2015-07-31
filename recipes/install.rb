@@ -57,5 +57,6 @@ if !!node[:elasticsearch][:basic_auth]
 end
 
 execute "install aws-cloud plugin" do
- command "#{node[:elasticsearch][:home_dir]}/bin/plugin install elasticsearch/elasticsearch-cloud-aws/2.3.0"
+  command "#{node[:elasticsearch][:home_dir]}/bin/plugin install elasticsearch/elasticsearch-cloud-aws/2.3.0"
+  not_if { Dir.exist?('/data/elasticsearch/plugins/cloud-aws') }
 end

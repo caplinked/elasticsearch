@@ -28,5 +28,9 @@ default.elasticsearch[:limits][:memlock] = 'unlimited'
 default.elasticsearch[:limits][:nofile]  = 128 * 1024
 default.elasticsearch[:thread_stack_size] = "256k"
 
+# === CLUSTER
+default.elasticsearch[:cluster][:name] = "#{node.elasticsearch[:cluster_name] || "caplinked-es-dev"}"
+
 # === NODE
+#by ES rule, if you have N nodes, then by convention, N/2+1 nodes should be masters for fail-over mechanisms
 default.elasticsearch[:node][:name]    = "0"
